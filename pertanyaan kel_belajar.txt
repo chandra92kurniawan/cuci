@@ -1,0 +1,3 @@
+pertanyaan :
+1. maksud coding (line 77-81) di page_index.php
+2. maksud coding (line 127) di page_index.php
