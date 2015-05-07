@@ -1,8 +1,8 @@
 <html >
 <head>
-	<?php $this->load->view('top');?>
+  
 <title>Tabel Member</title>
-	<!-- Bootstrap core CSS -->
+  <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url();?>assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
     <link href="<?php echo base_url();?>assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
@@ -21,7 +21,7 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-	<?php $this->load->view('sidebar');?>
+  
 </head>
 
 <body>
@@ -36,35 +36,17 @@
    <table class="table table-bordered table-striped table-condensed">
    <tr align="center">
     <td>No.</td>
-	<td>Foto Restoran</td>
+  <td>Foto Restoran</td>
     <td>Nama Restoran</td>
     <td>Alamat Restoran</td>
     <td>Telepon Restoran</td>
-	<td>Jenis Masakan</td>
-	<td>Latitude</td>
-	<td>Longitude</td>
-	<td>Rating</td>
+  <td>Jenis Masakan</td>
+  <td>Latitude</td>
+  <td>Longitude</td>
+  <td>Rating</td>
     <td>Aksi</td>
   </tr>
-  <tr>
-  <?php $no=1; foreach ($list as $data){ ?> 
   
-    <td><?php echo $no;?></td>
-    <td><?php echo $data->foto_restoran;?></td>
-    <td><?php echo $data->nama_restoran;?></td>
-	<td><?php echo $data->alamat_restoran;?></td>
-	<td><?php echo $data->telp_restoran;?></td>
-	<td><?php echo $data->jenis_masakan;?></td>
-	<td><?php echo $data->latitude;?></td>
-	<td><?php echo $data->longitude;?></td>
-	<td><?php echo $data->rating;?></td>
-    <td><a href="<?php echo base_url()?>restoran/hapus_data/<?php echo $data->id_restoran;?>" onClick="return confirm('Anda yakin ingin menghapus data ini?')">Hapus</a> 
-    </td>
-	<td><a href="<?php echo base_url()?>restoran/form_update/<?php echo $data->id_restoran;?>">Ubah</a> 
-    </td>
-    
-  </tr>
-  <?php $no++;} ?>
 </table>
 <!--footer start-->
       <footer class="site-footer">
@@ -96,9 +78,9 @@
 
     <!--script for this page-->
     <script src="<?php echo base_url();?>assets/js/sparkline-chart.js"></script>    
-	<script src="<?php echo base_url();?>assets/js/zabuto_calendar.js"></script>	
-	
-	<script type="text/javascript">
+  <script src="<?php echo base_url();?>assets/js/zabuto_calendar.js"></script>  
+  
+  <script type="text/javascript">
         $(document).ready(function () {
         var unique_id = $.gritter.add({
             // (string | mandatory) the heading of the notification
@@ -117,9 +99,9 @@
 
         return false;
         });
-	</script>
-	
-	<script type="application/javascript">
+  </script>
+  
+  <script type="application/javascript">
         $(document).ready(function () {
             $("#date-popover").popover({html: true, trigger: "manual"});
             $("#date-popover").hide();
@@ -152,7 +134,7 @@
             var to = $("#" + id).data("to");
             console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
         }
-		<?php $this->load->view('footer');?>
+    
     </script>
 
 </body>

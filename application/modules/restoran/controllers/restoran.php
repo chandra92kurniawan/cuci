@@ -12,8 +12,8 @@ class Restoran extends CI_Controller {
 	public function index()
 	{
 		
-		$data['list']=$this->m_restoran->getRestoran();
-		$this->load->view('v_restoran',$data);
+		//$data['list']=$this->m_restoran->getRestoran();
+		$this->load->view('v_restoran');
 		
 	}
 	function tambah_data(){

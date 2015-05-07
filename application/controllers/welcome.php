@@ -19,7 +19,10 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$data['judul']="TEST";
+		$this->load->view('template/_head',$data);
+		$this->load->view('template/_page');
+		$this->load->view('template/_footer');
 	}
 }
 
