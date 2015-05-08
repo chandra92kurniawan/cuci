@@ -5959,7 +5959,7 @@ button.close {
   margin-left: auto;
 }
 .pull-right {
-  margin: 3px;
+  margin: 3px; 
   float: right !important;
 }
 .pull-left {
