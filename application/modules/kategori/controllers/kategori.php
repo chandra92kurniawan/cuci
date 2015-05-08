@@ -10,7 +10,15 @@ class Kategori extends CI_Controller {
 		$this->load->view('page_index');
 		$this->load->view('template/_footer');		
 	}
-
+	function contoh()
+	{	echo "<pre>";
+		$dd=array('airi','budiman');
+		$data=array('draw'=>'1',
+					'recordsTotal'=>'3',
+					'recordsFiltered'=>'3',
+					'data'=>array($dd,array('cc','dd'),array('vv','zz')));
+		echo json_encode($data);
+	}
 }
 
 /* End of file dashboard.php */

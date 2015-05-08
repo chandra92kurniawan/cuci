@@ -188,7 +188,9 @@
 						<td><button class="btn btn-xs btn-danger wew pull-right" title="Hapus Kategori"><i class="glyphicon glyphicon-trash"></i></button><button class="btn btn-xs btn-warning pull-right wew" title="Ubah Kategori"><i class='glyphicon glyphicon-pencil'></i></button> <button class="btn btn-xs btn-success pull-right wew" title="Detail Kategori"><i class="glyphicon glyphicon-zoom-in"></i></button></td>
 					</tr>
 				</tbody>
-			</table>
+			</table><br><br>
+
+			
 		  </div>
 		</div>
 		
