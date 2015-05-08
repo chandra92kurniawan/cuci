@@ -24,7 +24,7 @@
 						<td>aasdcasdcasdc</td>
 						<td>aasdcasdcasdc</td>
 						<td><img width="50px" src="<?php echo base_url()?>uploads/mesin/laundry7.jpg"> </td>
-						<td><button class="btn btn-xs btn-danger wew pull-right" title="Hapus Kategori"><i class="glyphicon glyphicon-trash"></i></button><button class="btn btn-xs btn-warning pull-right wew ubah" title="Ubah Kategori"><i class='glyphicon glyphicon-pencil'></i></button> <button id="detail" class="btn btn-xs btn-success pull-right wew" title="Detail Kategori"><i class="glyphicon glyphicon-zoom-in"></i></button></td>
+						<td><button class="btn btn-xs btn-danger wew pull-right" data-toggle="modal" data-target="#bs-example-modal-sm" title="Hapus Kategori"><i class="glyphicon glyphicon-trash"></i></button><button class="btn btn-xs btn-warning pull-right wew ubah" title="Ubah Kategori"><i class='glyphicon glyphicon-pencil'></i></button> <button id="detail" class="btn btn-xs btn-success pull-right wew" title="Detail Kategori"><i class="glyphicon glyphicon-zoom-in"></i></button></td>
 					</tr>
 				<?php }?>	
 				</tbody>
@@ -312,6 +312,24 @@
     </div>
   </div>
   </form>
+</div>
+
+<div class="modal fade " id="bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Hapus Data</h4>
+      </div>
+      <div class="modal-body">
+        Apakah anda yakin akan menghapus data tersebut ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+        <button type="button" class="btn btn-danger">Hapus</button>
+      </div>
+    </div>
+  </div>
 </div>
 <script>
 	$('#detail').click(function(){
