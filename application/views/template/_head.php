@@ -34,6 +34,7 @@
 
     <script src="<?php echo base_url()?>assets/datatables/jquery.dataTables.js"></script>
     <script src="<?php echo base_url()?>assets/datatables/3/dataTables.bootstrap.js"></script>
+     <script src="<?php echo base_url()?>assets/js/zabuto_calendar.js"></script>  
     <!--common script for all pages-->
     <script src="<?php echo base_url()?>assets/js/common-scripts.js"></script>
     
@@ -42,31 +43,10 @@
 
     <!--script for this page-->
     <script src="<?php echo base_url()?>assets/js/sparkline-chart.js"></script>    
-  <script src="<?php echo base_url()?>assets/js/zabuto_calendar.js"></script>  
+ 
   
-  <!--script for this page-->
-    <script src="<?php echo base_url()?>assets/js/jquery-ui-1.9.2.custom.min.js"></script>
-
-    <!--custom switch-->
-    <script src="<?php echo base_url()?>assets/js/bootstrap-switch.js"></script>
-    
-    <!--custom tagsinput-->
-    <script src="<?php echo base_url()?>assets/js/jquery.tagsinput.js"></script>
-
-    <script type="text/javascript" src="<?php echo base_url()?>assets/js/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
-    
-    
-    <script src="<?php echo base_url()?>assets/js/form-component.js"></script>    
-    
-    
-  <script>
-      //custom select box
-
-      $(function(){
-          $('select.styled').customSelect();
-      });
-
-  </script>
+  
+  
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
