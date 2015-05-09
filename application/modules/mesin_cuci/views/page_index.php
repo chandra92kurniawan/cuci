@@ -43,7 +43,7 @@
 		<div class="panel panel-default">
 		  <div class="panel-heading" ><button class="btn btn-danger back" > <i class="glyphicon glyphicon-menu-left"></i> Detail Mesin Cuci</button>  </div>
 		  <div class="panel-body">
-		  	<table class="table table-striped table-hover">
+		  	<table class="table table-striped">
 		  		<tr>
 		  			<th style="width:200px" rowspan="9">
 		  				<center>

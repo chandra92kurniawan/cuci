@@ -28,8 +28,8 @@
     
     <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
     <script class="include" type="text/javascript" src="<?php echo base_url()?>assets/js/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="<?php echo base_url()?>assets/js/jquery.scrollTo.min.js"></script>
     <script src="<?php echo base_url()?>assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="<?php echo base_url()?>assets/js/jquery.scrollTo.min.js"></script>    
     <script src="<?php echo base_url()?>assets/js/jquery.sparkline.js"></script>
 
     <script src="<?php echo base_url()?>assets/datatables/jquery.dataTables.js"></script>
@@ -44,6 +44,29 @@
     <script src="<?php echo base_url()?>assets/js/sparkline-chart.js"></script>    
   <script src="<?php echo base_url()?>assets/js/zabuto_calendar.js"></script>  
   
+  <!--script for this page-->
+    <script src="<?php echo base_url()?>assets/js/jquery-ui-1.9.2.custom.min.js"></script>
+
+    <!--custom switch-->
+    <script src="<?php echo base_url()?>assets/js/bootstrap-switch.js"></script>
+    
+    <!--custom tagsinput-->
+    <script src="<?php echo base_url()?>assets/js/jquery.tagsinput.js"></script>
+
+    <script type="text/javascript" src="<?php echo base_url()?>assets/js/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
+    
+    
+    <script src="<?php echo base_url()?>assets/js/form-component.js"></script>    
+    
+    
+  <script>
+      //custom select box
+
+      $(function(){
+          $('select.styled').customSelect();
+      });
+
+  </script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -313,7 +336,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-                  <p class="centered"><a href="profile.html"><img src="assets/img/user.png" class="img-circle" width="60"></a></p>
+                  <p class="centered"><a href="profile.html"><img src="<?php echo base_url()?>assets/img/user.png" class="img-circle" width="60"></a></p>
                   <h5 class="centered">CM</h5>
                     
                   <li class="mt">
@@ -327,6 +350,23 @@
                           <i class="glyphicon glyphicon-th-large"></i>
                           <span>Mesin Cuci</span>
                       </a>
+                  </li>
+                  <li class="sub-menu3">
+                      <a href="<?php echo base_url()?>rekomendasi">
+                          <i class="glyphicon glyphicon-list-alt"></i>
+                          <span>Rekomendasi (Fuzzy Tahani)</span>
+                      </a>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="glyphicon glyphicon-asterisk"></i>
+                          <span>Pengaturan</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="<?php echo base_url()?>pengaturan/kriteria">Data Kriteria Variable</a></li>
+                          <li><a  href="<?php echo base_url()?>pengaturan/zadeh">Selector Operator Zadeh</a></li>
+                          <li><a  href="<?php echo base_url()?>pengaturan/bobot_kriteria">Data Bobot Kriteria</a></li>
+                      </ul>
                   </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
