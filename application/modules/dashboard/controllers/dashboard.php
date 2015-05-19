@@ -8,7 +8,7 @@ class Dashboard extends CI_Controller {
 		$data['judul']="Dashboard";
 		$this->load->view('template/_head',$data);
 		$this->load->view('page_index');
-		$this->load->view('template/_footer');
+		$this->load->view('template/_footer');    
 	}
 
 }
