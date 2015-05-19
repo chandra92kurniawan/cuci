@@ -24,6 +24,12 @@ class Welcome extends CI_Controller {
 		$this->load->view('template/_page');
 		$this->load->view('template/_footer');
 	}
+	function download()
+	{
+		$this->load->library('fpdf17/fpdf');
+		define('FPDF_FONTPATH',$this->config->item('fonts_path'));
+		$this->load->view('page_laporan');
+	}
 }
 
 /* End of file welcome.php */
