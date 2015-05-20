@@ -1,4 +1,4 @@
-DirectoryIndex index.php
+	DirectoryIndex index.php
     RewriteEngine on
     RewriteCond $1 !^(index\.php|images|stylesheets|system/application/sources/)
     RewriteCond %{REQUEST_FILENAME} !-f
