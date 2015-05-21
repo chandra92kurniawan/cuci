@@ -10,7 +10,7 @@
 	}
 </style>
 <div class="row">
-	<div class="col-md-12"><form class="form-horizontal">
+	<div class="col-md-12"><form class="form-horizontal" action="<?php echo base_url()?>pengaturan/zadeh/add" method="POST">
 		<table class="table table-bordered table-striped table-hover">
 			<thead>
 				<tr class="ass">
@@ -19,34 +19,25 @@
 				</tr>
 			</thead>
 			<tbody>
+				<?php $z=1;$aa="";$bb="";$total=$parameter->num_rows();foreach($parameter->result() as $param){
+					if($z!=1){
+						$bb=$param->id_parameter;
+						$operator=$this->m_zadeh->getOperator($aa,$bb);
+						if($operator){$operator=$operator->operator;}else{$operator='1';}
+						if($total>=$z){?>
+					<tr>
+						<td></td>
+						<td><?php $a['1']="AND";$a['2']="OR";echo form_dropdown('operator_'.$aa, $a, $operator,"class='form-control'");?> </td>
+					</tr>
+				<?php }
+					}
+					?>
 				<tr>
-					<td>Harga</td>
-					<td><select class="form-control" name="harga"><option>Or</option><option>And</option></select></td>
+					<td><?php echo $param->nama_parameter;?></td>
+					<td></td>
 				</tr>
-				<tr>
-					<td>Kapasitas</td>
-					<td><select class="form-control" name="harga"><option>Or</option><option>And</option></select></td>
-				</tr>
-				<tr>
-					<td>Kecepatan</td>
-					<td><select class="form-control" name="harga"><option>Or</option><option>And</option></select></td>
-				</tr>
-				<tr>
-					<td>Daya</td>
-					<td><select class="form-control" name="harga"><option>Or</option><option>And</option></select></td>
-				</tr>
-				<tr>
-					<td>Berat</td>
-					<td><select class="form-control" name="harga"><option>Or</option><option>And</option></select></td>
-				</tr>
-				<tr>
-					<td>Panjang</td>
-					<td><select class="form-control" name="harga"><option>Or</option><option>And</option></select></td>
-				</tr>
-				<tr>
-					<td>Tinggi</td>
-					<td><select class="form-control" name="harga"><option>Or</option><option>And</option></select></td>
-				</tr>
+				<?php $aa=$param->id_parameter; $z++;}?>
+				
 			</tbody>
 			<tfoot>
 				<tr>

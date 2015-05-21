@@ -11,6 +11,7 @@
 </style>
 <div class="row">
 	<div class="col-md-12">
+		<form action="<?php echo base_url()?>rekomendasi/rekomended" method="POST"></form>
 		<table class="table table-bordered table-striped table-hover">
 			<thead>
 				<tr class="ass">
@@ -24,54 +25,15 @@
 				</tr>
 			</thead>
 			<tbody>
+			<?php foreach($parameter as $param){?>
 				<tr>
-					<td>Harga</td>
-					<td><center><input type="radio" name="harga"></center></td>
-					<td><center><input type="radio" name="harga"></center></td>
-					<td><center><input type="radio" name="harga"></center></td>
+					<td><?php echo $param->nama_parameter;?></td>
+					<td><center><input checked="" type="radio" value="1" name="option_<?php echo $param->id_parameter;?>"></center></td>
+					<td><center><input type="radio" value="2" name="option_<?php echo $param->id_parameter;?>"></center></td>
+					<td><center><input type="radio" value="3" name="option_<?php echo $param->id_parameter;?>"></center></td>
 				</tr>
-				<tr>
-					<td>Kapasitas</td>
-					<td class="cen"><input type="radio" name="kapasitas"></td>
-					<td class="cen"><input type="radio" name="kapasitas"></td>
-					<td class="cen"><input type="radio" name="kapasitas"></td>
-				</tr>
-				<tr>
-					<td>Kecepatan</td>
-					<td class="cen"><input type="radio" name="Kecepatan"></td>
-					<td class="cen"><input type="radio" name="Kecepatan"></td>
-					<td class="cen"><input type="radio" name="Kecepatan"></td>
-				</tr>
-				<tr>
-					<td>Daya</td>
-					<td class="cen"><input type="radio" name="Daya"></td>
-					<td class="cen"><input type="radio" name="Daya"></td>
-					<td class="cen"><input type="radio" name="Daya"></td>
-				</tr>
-				<tr>
-					<td>Berat</td>
-					<td class="cen"><input type="radio" name="Berat"></td>
-					<td class="cen"><input type="radio" name="Berat"></td>
-					<td class="cen"><input type="radio" name="Berat"></td>
-				</tr>
-				<tr>
-					<td>Panjang</td>
-					<td class="cen"><input type="radio" name="Panjang"></td>
-					<td class="cen"><input type="radio" name="Panjang"></td>
-					<td class="cen"><input type="radio" name="Panjang"></td>
-				</tr>
-				<tr>
-					<td>Lebar</td>
-					<td class="cen"><input type="radio" name="Lebar"></td>
-					<td class="cen"><input type="radio" name="Lebar"></td>
-					<td class="cen"><input type="radio" name="Lebar"></td>
-				</tr>
-				<tr>
-					<td>Tinggi</td>
-					<td class="cen"><input type="radio" name="Tinggi"></td>
-					<td class="cen"><input type="radio" name="Tinggi"></td>
-					<td class="cen"><input type="radio" name="Tinggi"></td>
-				</tr>
+			<?php }?>
+			
 			</tbody>
 			<tfoot>
 				<tr>

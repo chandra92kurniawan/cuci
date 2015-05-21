@@ -143,6 +143,21 @@ class Kriteria extends CI_Controller {
 		$this->all_kriteria->master_bobot_kriteria();
 		redirect('pengaturan/kriteria');
 	}
+	function my_function()
+	{
+	    $this->load->driver('cache');
+
+		if ( ! $foo = $this->cache->get('foo'))
+		{
+		     echo 'Saving to the cache!<br />';
+		     $foo = 'foobarbaz!';
+
+		     // Save into the cache for 5 minutes
+		     $this->cache->save('foo', $foo, 300);
+		}
+		var_dump($this->cache->get_metadata('foo'));
+		echo $foo;
+	}
 }
 
 /* End of file kriteria.php */
