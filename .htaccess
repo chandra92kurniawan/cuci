@@ -1,6 +1,12 @@
-	DirectoryIndex index.php
-    RewriteEngine on
-    RewriteCond $1 !^(index\.php|images|stylesheets|system/application/sources/)
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ ./index.php/$1 [L,QSA]
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+#Checks to see if the user is attempting to access a valid file,
+#such as an image or css document, if this isn't true it sends the
+#request to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+#This last condition enables access to the images and css folders, and the robots.txt file
+RewriteCond $1 !^(index\.php|public|images|robots\.txt|css)
+RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>
