@@ -67,7 +67,7 @@
               
             </nav></center>
       </div>      
-</div>
+</div><br><br>
 <div class="row">
 <?php foreach($query->result() as $q){?>
   <a href="#" onclick="detail('<?php echo $q->id_mesin;?>')">
@@ -86,9 +86,8 @@
                 <img src="<?php echo base_url()?>uploads/mesin/<?php echo $q->gambar;?>" width="120">
           </div>
     </div>
-  </div>
-  </a><!-- /col-md-4 -->        
-
+  </div><!-- /col-md-4 -->        
+  </a>
 <?php
 } ?>
 </div>

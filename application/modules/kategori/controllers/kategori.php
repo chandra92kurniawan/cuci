@@ -15,6 +15,30 @@ class Kategori extends CI_Controller {
 		$this->load->view('page_index',$data);
 		$this->load->view('template/_footer');		
 	}
+	function kategoris($id){
+		//pengaturan pagination
+		$kat=$this->m_kategori->getDtlKategori($id);
+		 $config['base_url'] = base_url().'kategori/kategoris/'.$id.'/';		 
+		 $config['per_page'] = '12';
+		 $config['first_page'] = 'Awal';
+		 $config['last_page'] = 'Akhir';
+		 $config['next_page'] = '«';
+		 $config['prev_page'] = '»';
+		 $config['total_rows'] = $this->m_kategori->getAllMesin(0,0,$id)->num_rows();
+		 //inisialisasi config
+		 $this->pagination->initialize($config);
+
+		//buat pagination
+		 $data['halaman'] = $this->pagination->create_links();
+
+		//tamplikan data
+		 $data['query'] = $this->m_kategori->getAllMesin($config['per_page'], $this->uri->segment(4),$id);
+		$data['judul']=$kat->nama_mesin_kategori;
+		//print_r($data['halaman']);
+		$this->load->view('template/_head',$data);
+		$this->load->view('page_kategori',$data);
+		$this->load->view('template/_footer');
+	}
 	function getData()
 	{
 		$kategori=$this->m_kategori->getKategori();

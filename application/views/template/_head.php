@@ -355,10 +355,11 @@
                       </a>
                       <ul class="sub">
                           <li><a href="<?php echo base_url()?>kategori">Kategori Baru</a></li>
-                          <li><a  href="#">Samsung</a></li>
-                          <li><a  href="#">Sharp</a></li>
-                          <li><a  href="#">Toshiba</a></li>
-                          <li><a  href="#">Electrolux</a></li>
+                          <?php $kategori=$this->db->get('mesin_kategori')->result();
+                          foreach($kategori as $kat){?>
+                          <li><a  href="<?php echo base_url()?>kategori/kategoris/<?php echo $kat->id_mesin_kategori;?>"><?php echo $kat->nama_mesin_kategori;?></a></li>
+                          <?php }?>
+                          
                       </ul>
                   </li>
               </ul>

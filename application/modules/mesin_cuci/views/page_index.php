@@ -25,7 +25,7 @@
 						<td><?php echo $data->jenis_tabung." tabung";?></td>
 						<td><?php echo "Rp ".number_format($data->value,"0",'','.');?></td>
 						<td><img width="50px" src="<?php echo base_url()?>uploads/mesin/<?php echo $data->gambar;?>"></td>
-						<td><button onclick="hapus('<?php echo $data->id_mesin;?>')" class="btn btn-xs btn-danger wew pull-right" data-toggle="modal" data-target="#bs-example-modal-sm" title="Hapus Data Mesin"><i class="glyphicon glyphicon-trash"></i></button><button onclick="edit('<?php echo $data->id_mesin;?>')" class="btn btn-xs btn-warning pull-right wew ubah" data-toggle="modal" data-target="#myModalEdit" title="Ubah Kategori"><i class='glyphicon glyphicon-pencil'></i></button> <button id="detail" onclick="detail('<?php echo $data->id_mesin;?>')" class="btn btn-xs btn-success pull-right wew" title="Detail Kategori"><i class="glyphicon glyphicon-zoom-in"></i></button></td>
+						<td><button onclick="hapus('<?php echo $data->id_mesin;?>')" class="btn btn-xs btn-danger wew pull-right" data-toggle="modal" data-target="#bs-example-modal-sm" title="Hapus Data Mesin"><i class="glyphicon glyphicon-trash"></i></button><button onclick="edit('<?php echo $data->id_mesin;?>')" class="btn btn-xs btn-warning pull-right wew ubah" data-toggle="modal" data-target="#myModalEdit" title="Ubah Data Mesin Cuci"><i class='glyphicon glyphicon-pencil'></i></button> <button id="detail" onclick="detail('<?php echo $data->id_mesin;?>')" class="btn btn-xs btn-success pull-right wew" title="Detail Mesin Cuci"><i class="glyphicon glyphicon-zoom-in"></i></button></td>
 					</tr>
 				<?php } ?>
 					<!--<tr>

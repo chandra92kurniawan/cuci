@@ -11,7 +11,7 @@
 </style>
 <div class="row">
 	<div class="col-md-12">
-		<form action="<?php echo base_url()?>rekomendasi/rekomended" method="POST"></form>
+		<form action="<?php echo base_url()?>rekomendasi/rekomended" method="POST">
 		<table class="table table-bordered table-striped table-hover">
 			<thead>
 				<tr class="ass">
@@ -38,10 +38,11 @@
 			<tfoot>
 				<tr>
 					<td colspan="4" class="cen">
-						<input type="submit" value="Submit" class="btn btn-success"> <input type="reset" value="Reset" class="btn btn-default">
+						<input type="submit" value="Lihat" class="btn btn-success"> <input type="reset" value="Reset" class="btn btn-default">
 					</td>
 				</tr>
 			</tfoot>
 		</table>
+		</form>
 	</div>
 </div>
