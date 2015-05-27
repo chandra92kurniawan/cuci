@@ -44,9 +44,8 @@
     <!--script for this page-->
     <script src="<?php echo base_url()?>assets/js/sparkline-chart.js"></script>    
  
-  
-  
-  
+    <script type="text/javascript" src="<?php echo base_url()?>assets/js/jquery-validation.js"></script>
+    
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -274,14 +273,18 @@
             </div>
             <div class="top-menu">
               <ul class="nav pull-right top-menu">
+                    <?php if($this->session->userdata('_username')==''){?>
                     <li><a class="logout" href="#" data-toggle="modal" data-target=".bs-example-modal-sm">Login</a></li>
+                    <?php }else{?>
+                    <li><a class="logout" href="<?php echo base_url()?>login/do_logout" >Logout</a></li>
+                    <?php }?>
               </ul>
             </div>
         </header>
       <!--header end-->
       <!-- login -->
       <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-        <form>
+        <form action="<?php echo base_url()?>login/do_login" method="POST">
         <div class="modal-dialog modal-sm">
           <div class="modal-content">
             <div class="modal-header">
@@ -291,16 +294,16 @@
             <div class="modal-body">
               <div class="form-group">
                 <label for="exampleInputEmail1">Username</label>
-                <input type="text" class="form-control"  placeholder="Username">
+                <input type="text" name="username" class="form-control"  placeholder="Username">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Password</label>
-                <input type="password" class="form-control"  placeholder="Username">
+                <input type="password" name="password" class="form-control"  placeholder="Password">
               </div>
             </div>
             <div class="modal-footer">
               <center> <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
-              <button type="button" class="btn btn-success">Login</button></center>
+              <button type="submit" class="btn btn-success">Login</button></center>
             </div>
           </div>
         </div>
@@ -326,17 +329,36 @@
                       </a>
                   </li>
                   <li class="sub-menu3">
-                      <a href="<?php echo base_url()?>mesin_cuci">
-                          <i class="glyphicon glyphicon-th-large"></i>
-                          <span>Mesin Cuci</span>
-                      </a>
-                  </li>
-                  <li class="sub-menu3">
                       <a href="<?php echo base_url()?>rekomendasi">
                           <i class="glyphicon glyphicon-list-alt"></i>
                           <span>Rekomendasi (Fuzzy Tahani)</span>
                       </a>
                   </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-desktop"></i>
+                          <span>Kategori</span>
+                      </a>
+                      <ul class="sub">
+                          <?php 
+                          $sss=$this->session->userdata('_username');
+                          if(!empty($sss)){?>
+                          <li><a href="<?php echo base_url()?>kategori">Kategori Baru</a></li>
+                          <?php }?>
+                          <?php $kategori=$this->db->get('mesin_kategori')->result();
+                          foreach($kategori as $kat){?>
+                          <li><a  href="<?php echo base_url()?>kategori/kategoris/<?php echo $kat->id_mesin_kategori;?>"><?php echo $kat->nama_mesin_kategori;?></a></li>
+                          <?php }?>
+                          
+                      </ul>
+                  </li>
+                  <?php if($this->session->userdata('_username')!=''){?>
+                  <li class="sub-menu3">
+                      <a href="<?php echo base_url()?>mesin_cuci">
+                          <i class="glyphicon glyphicon-th-large"></i>
+                          <span>Mesin Cuci</span>
+                      </a>
+                  </li>                  
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="glyphicon glyphicon-asterisk"></i>
@@ -348,20 +370,7 @@
                           <li><a  href="<?php echo base_url()?>pengaturan/bobot_kriteria">Data Bobot Kriteria</a></li>
                       </ul>
                   </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-desktop"></i>
-                          <span>Kategori</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a href="<?php echo base_url()?>kategori">Kategori Baru</a></li>
-                          <?php $kategori=$this->db->get('mesin_kategori')->result();
-                          foreach($kategori as $kat){?>
-                          <li><a  href="<?php echo base_url()?>kategori/kategoris/<?php echo $kat->id_mesin_kategori;?>"><?php echo $kat->nama_mesin_kategori;?></a></li>
-                          <?php }?>
-                          
-                      </ul>
-                  </li>
+                  <?php }?>
               </ul>
               <!-- sidebar menu end-->
           </div>

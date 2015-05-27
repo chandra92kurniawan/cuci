@@ -6,7 +6,7 @@
 <div class="row" id="depan">
 	<div class="col-md-12">
 		<div class="panel panel-default">
-		  <div class="panel-heading" ><button  data-placement="bottom" class="btn btn-info wew" title="Print hasil rekomendasi" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-print"></i> Print hasil rekomendasi</button>  </div>
+		  <div class="panel-heading" ><a href="<?php echo base_url()?>rekomendasi/view_pdf" class="btn btn-info wew" title="Print hasil rekomendasi"><i class="glyphicon glyphicon-print"></i> Print hasil rekomendasi</a>  </div>
 		  <div class="panel-body">
 		    <table class="table table-responsive table-hover table-striped dt_table">
 				<thead>

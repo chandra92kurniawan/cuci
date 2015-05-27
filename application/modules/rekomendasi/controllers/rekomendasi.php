@@ -109,6 +109,46 @@ class Rekomendasi extends CI_Controller {
 		$data['parameter']=$this->m_mesin->paramById($id_mesin);
 		$this->load->view('page_detail', $data);
 	}
+	function view_pdf(){
+	      define('FPDF_FONTPATH',APPPATH .'plugins/fpdf/font/');
+	      require(APPPATH .'plugins/fpdf/fpdf.php');
+	     
+	      $pdf = new FPDF('p','mm','A4');
+	      $pdf -> AddPage();
+	     
+	      $pdf -> setDisplayMode ('fullpage');
+	     
+	      $pdf -> setFont ('times','B',20);
+	      $pdf -> cell(200,5,"Rekomendasi Fuzzy Tahani",0,1);
+	      $pdf->line(10,17,200,17);
+	    $field = array(
+            array('width' => 15, 'title' => 'No'),
+            array('width' => 30, 'title' => 'Kategori'),
+            array('width' => 50, 'title' => 'Mesin Cuci'),
+            array('width' => 40, 'title' => 'Tabung'),
+            array('width' => 40, 'title' => 'Harga')
+        );$pdf->ln();	$pdf->ln();	
+	      	foreach ($field as $value) {
+        	 $pdf->Cell($value['width'],10,$value['title'],'TB',0,'L');
+        	}
+
+        $rekomen=$this->m_rekomendasi->getRekomendasi();
+        $no=0;
+        $pdf->ln();	
+        foreach($rekomen as $rek){
+        	$pdf->Cell(15,10,++$no,'TB',0,'L');
+        	$pdf->Cell(30,10,$rek->nama_mesin_kategori,'TB',0,'L');
+        	$pdf->Cell(50,10,$rek->nama_mesin,'TB',0,'L');
+        	$pdf->Cell(40,10,$rek->jenis_tabung." tabung",'TB',0,'L');
+        	$pdf->Cell(40,10,"Rp ".number_format($rek->value,"0","","."),'TB',0,'L');
+        	$pdf->ln();	
+        }
+
+	      $pdf -> setFont ('times','B','20');
+	      //$pdf -> write (10,"Description");
+	     
+	      $pdf -> output ('your_file_pdf.pdf','D');     
+	  }
 	function test2()
 	{
 		echo "<pre>";print_r($this->session->all_userdata());

@@ -14,6 +14,7 @@
     background-color: #FFD777;
   }
 </style>
+<?php echo $this->session->flashdata('msg');?>
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   
 </div>
