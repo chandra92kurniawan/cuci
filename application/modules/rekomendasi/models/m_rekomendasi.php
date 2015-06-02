@@ -9,6 +9,11 @@ class M_rekomendasi extends CI_Model {
 		$this->db->limit(1);
 		return $this->db->get('tran_zadeh')->row();
 	}
+	function delbefore(){
+		$this->db->where('date(date) <', date('Ymd'));
+		$this->db->join('tran_fuzzy_dtl', 'tran_fuzzy_dtl.id_tran_fuzzy = tran_fuzzy.id_tran_fuzzy');
+		$this->db->delete('tran_fuzzy');
+	}
 	function getMesin()
 	{
 		return $this->db->query("SELECT DISTINCT(mesin.id_mesin) as id_mesin from mesin join mesin_dtl on mesin.id_mesin=mesin_dtl.id_mesin where id_parameter in (select id_parameter from tran_parameter)")->result();

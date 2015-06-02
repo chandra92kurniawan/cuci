@@ -20,8 +20,9 @@ class Rekomendasi extends CI_Controller {
 	{
 		$parameter=$this->db->get('tran_parameter')->result();
 		$sess=random_string('alnum', 16);
-		
-		$data=array('on_session'=>$sess);
+		//$this->m_rekomendasi->delbefore();
+
+		$data=array('on_session'=>$sess,'date'=>date('Y:m:d H:i:s'));
 		$this->db->insert('tran_fuzzy', $data);
 		$id_tran_fuzzy=$this->db->insert_id();
 		$array = array(

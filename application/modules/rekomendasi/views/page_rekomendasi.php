@@ -30,7 +30,7 @@
 						<td><?php echo $data->jenis_tabung." tabung";?></td>
 						<td><?php echo "Rp ".number_format($data->value,"0",'','.');?></td>
 						<td><img width="50px" src="<?php echo base_url()?>uploads/mesin/<?php echo $data->gambar;?>"></td>
-						<td><?php echo $data->nilai_rekomendasi;?></td>
+						<td><?php echo round($data->nilai_rekomendasi,2);?></td>
 						<td><button id="detail" onclick="detail('<?php echo $data->id_mesin;?>')" class="btn btn-xs btn-success pull-right wew" title="Detail Kategori"><i class="glyphicon glyphicon-zoom-in"></i> Detail</button></td>
 					</tr>
 				<?php } ?>
