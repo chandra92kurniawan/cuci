@@ -64,21 +64,7 @@
 			return false;
 		}
 	});
-	function ale(status)
-	{
-		var str;
-		if(status==1){
-			str="Apakah anda akan menonaktifkan user ini?";
-		}else{
-			str="Apakah anda akan mengaktifkan user ini?";
-		}
-		var r = confirm(str);
-		if (r == true) {
-	        return true;
-	    } else {
-	       return false;
-	    }
-	}
+	
 </script>
 <div class="row" id="depan">
 	<div class="col-md-12">
@@ -101,9 +87,9 @@
 						<td><?php echo $v->username;?></td>
 						<td><?php echo $v->nama_lengkap;?></td>
 						<td><?php if($v->status==1){?>
-						<a href="<?php echo base_url()?>pengaturan/user/setStatus/<?php echo $v->status;?>/<?php echo $v->username;?>" onclick="ale('<?php echo $v->status;?>')" class="btn btn-xs btn-info">Aktif</a>
+						<a href="<?php echo base_url()?>pengaturan/user/setStatus/<?php echo $v->status;?>/<?php echo $v->username;?>" onclick = "if ( !confirm('Apakah anda yakin akan menonaktifkan akun ini ?')) return false;" class="btn btn-xs btn-info">Aktif</a>
 						<?php }else{?>
-						<a href="<?php echo base_url()?>pengaturan/user/setStatus/<?php echo $v->status;?>/<?php echo $v->username;?>" onclick="ale('<?php echo $v->status;?>')" class="btn btn-xs btn-warning">tidak aktif</a>
+						<a href="<?php echo base_url()?>pengaturan/user/setStatus/<?php echo $v->status;?>/<?php echo $v->username;?>" onclick = "if ( !confirm('Apakah anda yakin akan mengaktifkan akun ini ?')) return false;" class="btn btn-xs btn-warning">tidak aktif</a>
 						<?php }?>	</td>
 					</tr>
 					<?php }?>

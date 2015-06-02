@@ -72,7 +72,7 @@ class Kriteria extends CI_Controller {
 			if($data->value<=$n1){
 				$hasil=0;
 			}else if($data->value>=$n1 and $data->value<=$n2){
-				$hasil=($n2-$data->value)/($n2-$n1);
+				$hasil=($data->value-$n1)/($n2-$n1);
 			}else{
 				$hasil=1;
 			}
@@ -97,7 +97,7 @@ class Kriteria extends CI_Controller {
 			}else if($data->value>=$n1 and $data->value<=$n2){
 				$hasil=($data->value-$n1)/($n2-$n1);
 			}else if($data->value>=$n2 and $data->value<=$n3){
-				$hasil=($data->value>=$n2)/($n3-$n2);
+				$hasil=($n3-$data->value)/($n3-$n2);
 			}
 			//echo $hasil;
 			$cek=$this->m_kriteria->cekBobotNilai($data->id_mesin,$id_parameter);

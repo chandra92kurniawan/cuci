@@ -41,8 +41,8 @@ class Rekomendasi extends CI_Controller {
 					$nilai_b=$this->m_rekomendasi->getNilaiBobot($b,$m->id_mesin);
 					$nilai2=$nilai_b['nilai_'.$nb];
 					$operator=$this->m_rekomendasi->getOperator($a,$b);
-					//echo "Nilai 2 atas ".$nilai2."<br>";
-					if($operator->operator==1){
+					echo "Nilai 2 atas ".$nilai2."<br>";
+					if($operator->operator==2){
 						if($nilai2>=$hasil){
 							$hasil=$nilai2;
 							//echo "operator ".$operator->operator." nilai1:".$nilai1.", nilai2:".$nilai2." hasil ".$hasil."<br><br>";
@@ -68,7 +68,7 @@ class Rekomendasi extends CI_Controller {
 				
 				if($no==0){
 					$hasil=$nilai1;	
-					//echo "Nilai awal ".$hasil;
+					echo "Nilai awal ".$hasil;
 				}//else{
 				//echo "nilai 1 bawah ".$hasil."<br>";
 				//}	
