@@ -71,7 +71,7 @@
             <div class="nav notify-row" id="top_menu">
                 <!--  notification start -->
                 <ul class="nav top-menu">
-                    <!-- settings start -->
+                    <!-- settings start 
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
                             <i class="glyphicon glyphicon-th-large"></i>
@@ -140,7 +140,7 @@
                         </ul>
                     </li>
                     <!-- settings end -->
-                    <!-- inbox dropdown start-->
+                    <!-- inbox dropdown start
                     <li id="header_inbox_bar" class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
                             <i class="glyphicon glyphicon-list-alt"></i>
@@ -204,7 +204,7 @@
                             </li>
                         </ul>
                     </li>
-                    <!-- inbox dropdown end -->
+                    <!-- inbox dropdown end 
                     <li id="header_inbox_bar" class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
                             <i class="glyphicon glyphicon-transfer"></i>
@@ -320,7 +320,7 @@
               <ul class="sidebar-menu" id="nav-accordion">
               
                   <p class="centered"><a href="profile.html"><img src="<?php echo base_url()?>assets/img/user.png" class="img-circle" width="60"></a></p>
-                  <h5 class="centered">CM</h5>
+                  <h5 class="centered"><?php echo $this->session->userdata('_username');?></h5>
                     
                   <li class="mt">
                       <a href="<?php echo base_url()?>dashboard">
@@ -358,7 +358,7 @@
                           <i class="glyphicon glyphicon-th-large"></i>
                           <span>Mesin Cuci</span>
                       </a>
-                  </li>                  
+                  </li>                                  
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="glyphicon glyphicon-asterisk"></i>
@@ -368,6 +368,7 @@
                           <li><a  href="<?php echo base_url()?>pengaturan/kriteria">Data Kriteria Variable</a></li>
                           <li><a  href="<?php echo base_url()?>pengaturan/zadeh">Selector Operator Zadeh</a></li>
                           <li><a  href="<?php echo base_url()?>pengaturan/bobot_kriteria">Data Bobot Kriteria</a></li>
+                          <li><a  href="<?php echo base_url()?>pengaturan/user">User</a></li>
                       </ul>
                   </li>
                   <?php }?>

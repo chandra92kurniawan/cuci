@@ -17,9 +17,10 @@ class Login extends CI_Controller {
 		$user=$this->input->post('username');
 		$pass=do_hash($this->input->post('password'),'md5');
 		$cek=$this->m_login->cekpass($user,$pass);
-		if($cek==0){
+		if($cek->num_rows()==0){
 			$this->session->set_flashdata('msg', "<div class='alert alert-danger fade in'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><strong>login gagal</strong> .</div>");
 		}else{
+			if($cek->row()->status==1){
 			$array = array(
 				'_username' =>$user,
 				'login'=>true,
@@ -27,6 +28,9 @@ class Login extends CI_Controller {
 			
 			$this->session->set_userdata( $array );
 			$this->session->set_flashdata('msg', "<div class='alert alert-success fade in'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><strong>Login berhasil</strong> .</div>");
+			}else{
+			$this->session->set_flashdata('msg', "<div class='alert alert-warning fade in'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><strong>Akun tersebut telah dinonaktifkan</strong> .</div>");	
+			}
 		}
 		redirect('dashboard');
 	}

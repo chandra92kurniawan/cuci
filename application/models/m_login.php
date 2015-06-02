@@ -6,7 +6,7 @@ class M_login extends CI_Model {
 	function cekpass($user,$pass){
 		$this->db->where('username', $user);
 		$this->db->where('password', $pass);
-		return $this->db->get('adm_user')->num_rows();
+		return $this->db->get('adm_user');
 	}	
 
 }
