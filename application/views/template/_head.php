@@ -367,7 +367,7 @@
                       <ul class="sub">
                           <li><a  href="<?php echo base_url()?>pengaturan/kriteria">Data Kriteria Variable</a></li>
                           <li><a  href="<?php echo base_url()?>pengaturan/zadeh">Selector Operator Zadeh</a></li>
-                          <li><a  href="<?php echo base_url()?>pengaturan/bobot_kriteria">Data Bobot Kriteria</a></li>
+                          <!--<li><a  href="<?php echo base_url()?>pengaturan/bobot_kriteria">Data Bobot Kriteria</a></li>-->
                           <li><a  href="<?php echo base_url()?>pengaturan/user">User</a></li>
                       </ul>
                   </li>
