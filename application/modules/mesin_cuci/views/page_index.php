@@ -56,6 +56,8 @@
 	{
 		$.post("<?php echo base_url()?>mesin_cuci/form_detail/"+id,function(data){
 			$('#form-detail').html(data);
+			$('#form-detail').show('slow');
+			$('#depan').hide();
 		});
 	}
 </script>
