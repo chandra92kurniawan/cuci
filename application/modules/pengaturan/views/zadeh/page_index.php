@@ -33,7 +33,7 @@
 					}
 					?>
 				<tr>
-					<td><?php echo $param->nama_parameter;?></td>
+					<td><?php echo "Kriteria ".$z;//echo $param->nama_parameter;?></td>
 					<td></td>
 				</tr>
 				<?php $aa=$param->id_parameter; $z++;}?>

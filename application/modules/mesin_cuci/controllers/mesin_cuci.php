@@ -30,6 +30,8 @@ class Mesin_cuci extends CI_Controller {
 					'gambar'=>'',
 					//'harga'=>$this->input->post('harga'),
 					'jenis_tabung'=>$this->input->post('jenis_tabung'),
+					'bukaan_pintu'=>$this->input->post('bukaan_pintu'),
+					'garansi'=>$this->input->post('garansi'),
 					'fitur_lainya'=>$this->input->post('fitur'),
 					'nama_mesin'=>$this->input->post('nama'));
 		$this->db->trans_begin();

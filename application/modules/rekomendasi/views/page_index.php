@@ -11,7 +11,25 @@
 </style>
 <div class="row">
 	<div class="col-md-12">
-		<form action="<?php echo base_url()?>rekomendasi/rekomended" method="POST">
+		<form class="form-horizontal" action="<?php echo base_url()?>rekomendasi/rekomended" method="POST">
+			 <div class="form-group">
+			    <label class="col-sm-2 control-label">Nama lengkap</label>
+			    <div class="col-sm-3">
+			      <input type="text" name="nama_lengkap" required class="form-control" placeholder="Nama Lengkap">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label">Alamat</label>
+			    <div class="col-sm-3">
+			      <textarea name="alamat" class="form-control" placeholder="Alamat" required></textarea>
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label">Usia</label>
+			    <div class="col-sm-3">
+			      <input type="text" name="usia" placeholder="Usia" required class="form-control">
+			    </div>
+			  </div>
 		<table class="table table-bordered table-striped table-hover">
 			<thead>
 				<tr class="ass">
@@ -28,7 +46,7 @@
 			<?php foreach($parameter as $param){?>
 				<tr>
 					<td><?php echo $param->nama_parameter;?></td>
-					<td><center><input checked="" type="radio" value="1" name="option_<?php echo $param->id_parameter;?>"></center></td>
+					<td><center><input type="radio" value="1" name="option_<?php echo $param->id_parameter;?>"></center></td>
 					<td><center><input type="radio" value="2" name="option_<?php echo $param->id_parameter;?>"></center></td>
 					<td><center><input type="radio" value="3" name="option_<?php echo $param->id_parameter;?>"></center></td>
 				</tr>

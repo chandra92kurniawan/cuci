@@ -45,6 +45,12 @@ class Sample extends CI_Controller {
 	     
 	      $pdf -> output ('your_file_pdf.pdf','D');     
 	  }
+	  function tes()
+	  {
+	  	$ip = $_SERVER['REMOTE_ADDR'];
+		echo $ip;
+		print_r($this->session->all_userdata());
+	  }
 }
 
 /* End of file sample.php */

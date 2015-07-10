@@ -85,9 +85,18 @@
 		    <input type="text" name="nama" id="nama" class="form-control">
 		  </div>
 		  <div class="form-group">
+		    <label>Bukaan pintu</label>
+		  	<?php $bp['']="- Pilih Bukaan Pintu -";$bp['1']="Atas";$bp['2']="Depan";
+		  	echo form_dropdown('bukaan_pintu', $bp, '',"class='form-control' id='bukaan'");?>
+		  </div>
+		  <div class="form-group">
 		    <label>Jenis Tabung</label>
 		  	<?php $j['']="- Pilih Jenis Tabung -";$j['1']="Satu Tabung";$j['2']="Dua Tabung";
 		  	echo form_dropdown('jenis_tabung', $j, '',"class='form-control' id='jenis_tabung'");?>
+		  </div>
+		  <div class="form-group">
+		    <label>Garansi (Tahun)</label>
+		    <input type="text" name="garansi" id="garansi" class="form-control">
 		  </div>
 		  <!--<div class="form-group">
 		    <label>Harga</label>
